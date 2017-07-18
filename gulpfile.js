@@ -8,7 +8,8 @@ const cfg = {
     js: ['./src/**/*.js', '!node_modules/**/*.js'],
     html: './src/**/*.html',
     css: './src/**/*.css',
-    assets: ['./src/**/*.png', './src/**/*.jpg']
+    assets: ['./src/**/*.png', './src/**/*.jpg'],
+    node_modules: ['./node_modules/**/*']
   },
   dest: './'
 };
@@ -32,6 +33,11 @@ gulp.task('copy', ['clean'], () => {
   .pipe(gulp.dest(path.join(cfg.dest, 'public')));
 });
 
+gulp.task('node_modules', ['clean'], () => {
+  gulp.src(cfg.src.node_modules)
+  .pipe(gulp.dest(path.join(cfg.dest, 'public/node_modules')));
+});
+
 gulp.task('assets', ['clean'], () => {
   gulp.src(cfg.src.assets)
   .pipe(gulp.dest(path.join(cfg.dest, 'public')));
@@ -42,7 +48,7 @@ gulp.task('css', ['clean'], () => {
   .pipe(gulp.dest(path.join(cfg.dest, 'public')));
 });
 
-gulp.task('build', ['babel', 'copy', 'assets', 
+gulp.task('build', ['babel', 'copy', 'node_modules', 'assets',
 'css']);
 
 gulp.task('default', ['build']);
