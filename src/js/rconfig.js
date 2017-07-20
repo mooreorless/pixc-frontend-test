@@ -12,13 +12,16 @@ require.config({
     jquery: '../../node_modules/jquery/dist/jquery.min',
     lodash: '../../node_modules/lodash/lodash',
     moment: '../../node_modules/moment/moment',
-    // 'datatables.net': '../../node_modules/datatables.net/js/jquery.dataTables',
+    datatables: '//cdn.datatables.net/1.10.13/dataTables.bootstrap',
+    'datatables.net': '../../node_modules/datatables.net/js/jquery.dataTables',
     oclazyload: '../../node_modules/oclazyload/dist/ocLazyLoad.require',
 
 
     // modules
-    sdk: './sdk/module',
-    core: './core/module'
+    core: './core/module',
+    orders: './modules/orders/module',
+    clients: './modules/clients/module',
+    sdk: './sdk/module'
   },
   shim: {
     angular: {
@@ -37,9 +40,9 @@ require.config({
     'angular-ui-router': ['angular'],
     'angular-bootstrap': ['angular', 'angular-touch', 'angular-animate'],
     'angular-touch': ['angular'],
-    'angular-animate': ['angular']
-    // 'datatables.net': ['angular', 'jquery']
+    'angular-animate': ['angular'],
+    'datatables.net': ['angular', 'jquery']
   }
 });
 
-require(['js/index.js', 'bootstrap']);
+require(['js/app.js', 'bootstrap']);
