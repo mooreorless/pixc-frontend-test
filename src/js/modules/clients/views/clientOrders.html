@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" id="toolbar">
+      <button id="toolbar-btn" ng-click="createOrder()" class="btn btn-success pull-right">
+        <span class="glyphicon glyphicon-plus"></span> Create Order</button>
+      <button id="toolbar-btn" ui-sref="app.main.clients" class="btn btn-info pull-left">View all clients</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Client Order List</div>
+        <div class="panel-body">
+          <pixc-data-table
+          id="orderList"
+          data-src="getOrders(data, cb, settings)"
+          data-cols="orderCols"
+          data-table="orderList"
+          data-options="orderTableOpts"></pixc-data-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

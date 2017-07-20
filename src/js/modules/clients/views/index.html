@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" id="toolbar">
+      <button id="toolbar-btn" ui-sref="app.main.orders" class="btn btn-info pull-left">View all orders</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Client List</div>
+        <div class="panel-body">
+          <pixc-data-table
+          id="clientList"
+          data-src="getClients(data, cb, settings)"
+          data-cols="clientCols"
+          data-table="clientList"
+          data-options="clientTableOpts"></pixc-data-table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
