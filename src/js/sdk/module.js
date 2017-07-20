@@ -6,7 +6,7 @@ define([
     'ngResource'
   ]);
 
-  sdk.constant('$apiEndpoint', 'https://localhost:3000');
+  sdk.constant('$apiEndpoint', 'http://localhost:3000');
 
   return sdk;
 });
