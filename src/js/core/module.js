@@ -4,7 +4,8 @@ define([
   'angular-resource',
   'oclazyload',
   'angular-bootstrap',
-  // 'moduleHere'
+  'orders',
+  'clients',
   'sdk'
 ], (angular) => {
 
@@ -13,6 +14,8 @@ define([
     'ngResource',
     'oc.lazyLoad',
     'ui.bootstrap',
+    'orders',
+    'clients',
     'sdk'
   ]);
 
@@ -40,20 +43,13 @@ define([
       },
       resolve: {
         deps: $ocLazyLoad => $ocLazyLoad.load([
-          './js/core/controllers/main.ctrl.js'
+          './js/core/controllers/main.ctrl.js',
+          './js/sdk/models/user.factory.js'
         ])
-      }
-    })
-    .state('app.main.orders', {
-      url: '/orders',
-      views: {
-        'content@app': {
-          templateUrl: './js/core/views/orders/index.html'
-        }
       }
     });
 
-    $urlRouterProvider.otherwise('/orders');
+    $urlRouterProvider.otherwise('/clients');
   });
 
   return core;
